@@ -3,10 +3,14 @@ var React = require('react');
 
 var view = require('./view.jsx');
 
-React.render(
-  React.createElement(view),
-  document.getElementById('content')
-);
+(function() {
+  'use strict';
+  
+  React.render(
+    React.createElement(view),
+    document.getElementById('content')
+  );
+})();
 
 },{"./view.jsx":158,"react":157}],2:[function(require,module,exports){
 // shim for using process in browser
@@ -19821,23 +19825,29 @@ module.exports = require('./lib/React');
 },{"./lib/React":30}],158:[function(require,module,exports){
 var React = require('react');
 
-var Name = React.createClass({displayName: "Name",
-  render: function() {
-    return (
-      React.createElement("span", null, this.props.name)
-    );
-  }
-});
-var HelloWorld = React.createClass({displayName: "HelloWorld",
-  render: function() {
-    return (
-      React.createElement("div", null, 
-        React.createElement("h1", null, "Hello, world!"), 
-        React.createElement(Name, {name: "Masanori Kinoshita"})
-      )
-    );
-  }
-});
-module.exports = HelloWorld;
+(function() {
+  'use strict';
+  
+  var Name = React.createClass({displayName: "Name",
+    render: function() {
+      return (
+        React.createElement("span", null, this.props.name)
+      );
+    }
+  });
+  
+  var HelloWorld = React.createClass({displayName: "HelloWorld",
+    render: function() {
+      return (
+        React.createElement("div", null, 
+          React.createElement("h1", null, "Hello, world!"), 
+          React.createElement(Name, {name: "Masanori Kinoshita"})
+        )
+      );
+    }
+  });
+  
+  module.exports = HelloWorld;
+})();
 
 },{"react":157}]},{},[1]);
