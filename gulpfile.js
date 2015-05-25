@@ -4,11 +4,10 @@ var source = require("vinyl-source-stream");
 var reactify = require('reactify');
 
 gulp.task('browserify', function(){
-  var b = browserify({
+  browserify({
     entries: ['./src/main.js'],
     transform: [reactify]
-  });
-  return b.bundle()
+  }).bundle()
       .pipe(source('app.js'))
       .pipe(gulp.dest('./dist'));
 });
